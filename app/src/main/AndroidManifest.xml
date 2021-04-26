@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Projekti">
-        <activity android:name=".PainoIndeksi"></activity>
+        <activity android:name=".Verenpaine"></activity>
+        <activity android:name=".PainoIndeksi" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
