@@ -13,5 +13,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("vituttaa tää");
 
         System.out.println("vois toimii ny");
+
+        System.out.println("diggoo");
     }
 }
