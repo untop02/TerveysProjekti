@@ -45,15 +45,15 @@ public class VesiLaskuri extends AppCompatActivity {
         });
     }
     public void lisaaLasi(){
-        vesimaara =+ 0.3;
+        vesimaara += 0.3;
         vedenmaara.setText(String.valueOf(vesimaara));
     }
     public void lisaapienipullo(){
-        vesimaara =+ 0.5;
+        vesimaara += 0.5;
         vedenmaara.setText(String.valueOf(vesimaara));
     }
     public void lisaaisopullo(){
-        vesimaara =+ 1.5;
+        vesimaara += 1.5;
         vedenmaara.setText(String.valueOf(vesimaara));
     }
 

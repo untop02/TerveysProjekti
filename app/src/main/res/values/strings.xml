@@ -3,4 +3,7 @@
     <string name="Nainen">Nainen</string>
     <string name="Mies">Mies</string>
     <string name="PainoIndeksi">Paino Indeksi</string>
+    <string name="Paino">Paino</string>
+    <string name="Ika">Ikä</string>
+    <string name="Pituus">Pituus</string>
 </resources>
