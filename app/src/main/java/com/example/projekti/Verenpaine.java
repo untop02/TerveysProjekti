@@ -5,12 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class Verenpaine extends AppCompatActivity {
 
-    int ylaArvo;
-    int alaArvo;
+
     TextView verenpaineKentta;
     Button laskeBtn;
 
@@ -21,22 +21,26 @@ public class Verenpaine extends AppCompatActivity {
 
         verenpaineKentta = findViewById(R.id.tvVerenpaine);
         laskeBtn = findViewById(R.id.laskeBtn);
+        EditText ylaArvo = findViewById(R.id.ylaArvo);
+        EditText alaArvo = findViewById(R.id.alaArvo);
+
 
         laskeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                laskeVerenpaine();
+                int yla = Integer.parseInt(ylaArvo.getText().toString());
+                int ala = Integer.parseInt(alaArvo.getText().toString());
+
+                if (yla >= 140 && ala > 90) {
+                    verenpaineKentta.setText("Verenpaineesi on koholla.");
+                } else {
+                    verenpaineKentta.setText("Verenpaineesi on nomaali");
+                }
             }
         });
 
     }
 
-    public void laskeVerenpaine() {
-        if (ylaArvo >= 140 && alaArvo >= 90) {
-            verenpaineKentta.setText("Verenpaineesi on koholla.");
-        } else {
-            verenpaineKentta.setText("Verenpaineesi on normaali.");
-        }
-    }
 
 }
+
