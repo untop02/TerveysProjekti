@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button painoIndeksiBtn = (Button)findViewById(R.id.PainoIndeksiBtn);
         Button verenpaineBtn = (Button)findViewById(R.id.VerenpaineBtn);
+        Button vesilaskuriBtn = (Button)findViewById(R.id.VesiLaskuriBtn);
 
         verenpaineBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,8 +30,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, PainoIndeksi.class));
             }
         });
-
-
+        vesilaskuriBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, VesiLaskuri.class));
+            }
+        });
 
 
     }
