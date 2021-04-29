@@ -13,13 +13,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button btn = (Button)findViewById(R.id.PainoIndeksi);
+        Button painoIndeksiBtn = (Button)findViewById(R.id.PainoIndeksiBtn);
+        Button verenpaineBtn = (Button)findViewById(R.id.VerenpaineBtn);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        verenpaineBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Verenpaine.class));
+            }
+        });
+
+        painoIndeksiBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, PainoIndeksi.class));
             }
         });
+
+
+
+
     }
 }
