@@ -7,6 +7,19 @@
     tools:context=".Verenpaine">
 
 
+    <TextView
+        android:id="@+id/tvVerenpaineInfo"
+        android:layout_width="298dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="150dp"
+        android:text="tekstiä nii maan birusti"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVerenpaine" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="409dp"
@@ -16,10 +29,10 @@
 
     <EditText
         android:id="@+id/alaArvo"
-        android:layout_width="125dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="@+id/ylaArvo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -29,11 +42,11 @@
 
     <EditText
         android:id="@+id/ylaArvo"
-        android:layout_width="125dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="280dp"
         android:ems="10"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintEnd_toStartOf="@+id/alaArvo"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,6 +57,7 @@
         android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
+        android:gravity="center"
         android:padding="2px"
         android:text="Ala-arvo (mmHg)"
         app:layout_constraintBottom_toTopOf="@+id/alaArvo"
@@ -56,6 +70,7 @@
         android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
+        android:gravity="center"
         android:padding="2px"
         android:text="Yläarvo (mmHg)"
         app:layout_constraintBottom_toTopOf="@+id/ylaArvo"
@@ -65,8 +80,10 @@
 
     <Button
         android:id="@+id/laskeBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="8dp"
         android:text="Laske"
         app:layout_constraintBottom_toTopOf="@+id/tvVerenpaine"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,13 +93,15 @@
 
     <TextView
         android:id="@+id/tvVerenpaine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="67dp"
-        android:layout_marginBottom="164dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="310dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvVerenpaineInfo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/laskeBtn" />
 
