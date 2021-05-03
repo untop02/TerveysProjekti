@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -39,14 +40,9 @@ public class Verenpaine extends AppCompatActivity {
         String korkeaVp = ("Verenpaine on koholla, kun se on yli 140/90 mmHg.");
 
 
-        //Lisätään alla tehty toiminnallisuus napin sallimiselle
-        ylaArvo.addTextChangedListener(onkoTyhja);
-        alaArvo.addTextChangedListener(onkoTyhja);
-
         //Napin painallus hakee arvot tekstikentistä ja kertoo verenpaineen tason ehtojen mukaisesti
-        laskeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        laskeBtn.setOnClickListener(v -> {
+            try {
                 int yla = Integer.parseInt(ylaArvo.getText().toString());
                 int ala = Integer.parseInt(alaArvo.getText().toString());
 
@@ -56,7 +52,7 @@ public class Verenpaine extends AppCompatActivity {
                 } else if (yla >= 130 && yla <= 139 && ala >= 85 && ala <= 89) {
                     verenpaineKentta.setText("Verenpaineesi on tyydyttävä.");
                     verenpaineInfo.setText(tyydyttavaVp);
-                } else if (yla <= 130 && ala <= 85 && ala >= 79) {
+                } else if (yla <= 130 && ala <= 85 && ala >= 80) {
                     verenpaineKentta.setText("Verenpaineesi on normaali.");
                     verenpaineInfo.setText(normaaliVp);
                 } else if (yla <= 120 && ala <= 80 && ala >= 60) {
@@ -72,32 +68,12 @@ public class Verenpaine extends AppCompatActivity {
                     verenpaineKentta.setText("Alle rajojen.");
                     verenpaineInfo.setText("");
                 }
+            } catch (NumberFormatException exception) {
+                Toast.makeText(getApplicationContext(), "Täytä kentät", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
-
-    //Sallii nappulan, jos tekstikenttä ei ole tyhjä
-    private TextWatcher onkoTyhja = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            if (ylaArvo.toString().trim().equals("")) {
-                laskeBtn.setEnabled(false);
-            } else {
-                laskeBtn.setEnabled(true);
-            }
-        }
-
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-        }
-
-        @Override
-        public void afterTextChanged(Editable s) {
-
-        }
-    };
 
 
 }
