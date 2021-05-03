@@ -12,7 +12,6 @@
         android:layout_width="298dp"
         android:layout_height="50dp"
         android:layout_marginBottom="150dp"
-        android:text="tekstiä nii maan birusti"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,7 +92,7 @@
 
     <TextView
         android:id="@+id/tvVerenpaine"
-        android:layout_width="310dp"
+        android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginTop="45dp"
         android:layout_marginBottom="8dp"
