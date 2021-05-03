@@ -24,12 +24,14 @@ public class Verenpaine extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verenpaine);
 
+        //Elementtien haku XML-layoutista
         verenpaineKentta = findViewById(R.id.tvVerenpaine);
         verenpaineInfo = findViewById(R.id.tvVerenpaineInfo);
         laskeBtn = findViewById(R.id.laskeBtn);
         ylaArvo = findViewById(R.id.ylaArvo);
         alaArvo = findViewById(R.id.alaArvo);
 
+        //Lisätietoja verenpaineen eri tasoille
         String matalaVp = ("Verenpaine on matala, jos se on alle 100/60 mmHg.");
         String ihanteellinenVp = ("Verenpaine on ihanteellinen, kun se on alle 120/80 mmHg");
         String normaaliVp = ("Verenpaine on normaali, kun se on alle 130/85 mmHg.");
@@ -37,6 +39,11 @@ public class Verenpaine extends AppCompatActivity {
         String korkeaVp = ("Verenpaine on koholla, kun se on yli 140/90 mmHg.");
 
 
+        //Lisätään alla tehty toiminnallisuus napin sallimiselle
+        ylaArvo.addTextChangedListener(onkoTyhja);
+        alaArvo.addTextChangedListener(onkoTyhja);
+
+        //Napin painallus hakee arvot tekstikentistä ja kertoo verenpaineen tason ehtojen mukaisesti
         laskeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +77,27 @@ public class Verenpaine extends AppCompatActivity {
 
     }
 
+    //Sallii nappulan, jos tekstikenttä ei ole tyhjä
+    private TextWatcher onkoTyhja = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            if (ylaArvo.toString().trim().equals("")) {
+                laskeBtn.setEnabled(false);
+            } else {
+                laskeBtn.setEnabled(true);
+            }
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
 
 
 }
