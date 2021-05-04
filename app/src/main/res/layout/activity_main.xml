@@ -7,46 +7,41 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/PainoIndeksiBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="281dp"
-        android:text="@string/PainoIndeksi"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/VerenpaineBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Verenpaine"
+        app:icon="@drawable/verenpaine"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/VesiLaskuriBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/VerenpaineBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/PainoIndeksiBtn" />
 
     <Button
-        android:id="@+id/VerenpaineBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="154dp"
-        android:layout_marginLeft="154dp"
-        android:layout_marginTop="309dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginRight="164dp"
-        android:layout_marginBottom="45dp"
-        android:text="Verenpaine"
-        app:layout_constraintBottom_toTopOf="@+id/PainoIndeksiBtn"
+        android:id="@+id/PainoIndeksiBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/PainoIndeksi"
+        app:icon="@drawable/paino"
+        app:layout_constraintBottom_toTopOf="@+id/VerenpaineBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/VesiLaskuriBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginBottom="197dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
         android:text="Vesilaskuri"
+        app:icon="@drawable/water"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PainoIndeksiBtn"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/VerenpaineBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
