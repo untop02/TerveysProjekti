@@ -3,22 +3,17 @@ package com.example.projekti;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 public class Verenpaine extends AppCompatActivity {
 
     TextView verenpaineKentta, verenpaineInfo;
     Button laskeBtn;
     EditText ylaArvo, alaArvo;
+    String matalaVpInfo, ihanteellinenVpInfo, normaaliVpInfo, tyydyttavaVpInfo, korkeaVpInfo, matalaVp, ihanteellinenVp, normaaliVp, tyydyttavaVp, korkeaVp, ylaRaja, alaRaja;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +27,21 @@ public class Verenpaine extends AppCompatActivity {
         ylaArvo = findViewById(R.id.ylaArvo);
         alaArvo = findViewById(R.id.alaArvo);
 
+        //Verenpaineteksti
+        matalaVp = getString(R.string.matala_vp);
+        ihanteellinenVp = getString(R.string.ihanteellinen_vp);
+        normaaliVp = getString(R.string.normaali_vp);
+        tyydyttavaVp = getString(R.string.tyydyttava_vp);
+        korkeaVp = getString(R.string.koholla_vp);
+
         //Lisätietoja verenpaineen eri tasoille
-        String matalaVp = ("Verenpaine on matala, jos se on alle 100/60 mmHg.");
-        String ihanteellinenVp = ("Verenpaine on ihanteellinen, kun se on alle 120/80 mmHg");
-        String normaaliVp = ("Verenpaine on normaali, kun se on alle 130/85 mmHg.");
-        String tyydyttavaVp = ("Verenpaine on tyydyttävä, kun se on 130-139/ 85-89 mmHg välillä.");
-        String korkeaVp = ("Verenpaine on koholla, kun se on yli 140/90 mmHg.");
+        matalaVpInfo = getString(R.string.matala_vp_info);
+        ihanteellinenVpInfo = getString(R.string.ihanteellinen_vp_info);
+        normaaliVpInfo = getString(R.string.normaali_vp_info);
+        tyydyttavaVpInfo = getString(R.string.tyydyttava_vp_info);
+        korkeaVpInfo = getString(R.string.koholla_vp_info);
+        ylaRaja = getString(R.string.Ylä_raja);
+        alaRaja = getString(R.string.Ala_raja);
 
 
         //Napin painallus hakee arvot tekstikentistä ja kertoo verenpaineen tason ehtojen mukaisesti
@@ -46,26 +50,26 @@ public class Verenpaine extends AppCompatActivity {
                 int yla = Integer.parseInt(ylaArvo.getText().toString());
                 int ala = Integer.parseInt(alaArvo.getText().toString());
 
-                if (yla >= 140 && ala >= 90) {
-                    verenpaineKentta.setText("Verenpaineesi on koholla.");
-                    verenpaineInfo.setText(korkeaVp);
+                if (yla >= 140 && yla <= 200 && ala >= 90 && ala <= 150) {
+                    verenpaineKentta.setText(korkeaVp);
+                    verenpaineInfo.setText(korkeaVpInfo);
                 } else if (yla >= 130 && yla <= 139 && ala >= 85 && ala <= 89) {
-                    verenpaineKentta.setText("Verenpaineesi on tyydyttävä.");
-                    verenpaineInfo.setText(tyydyttavaVp);
-                } else if (yla <= 130 && ala <= 85 && ala >= 80) {
-                    verenpaineKentta.setText("Verenpaineesi on normaali.");
-                    verenpaineInfo.setText(normaaliVp);
-                } else if (yla <= 120 && ala <= 80 && ala >= 60) {
-                    verenpaineKentta.setText("Verenpaineesi on ihanteellinen.");
-                    verenpaineInfo.setText(ihanteellinenVp);
-                } else if (yla <= 100 && ala <= 60 && ala >= 40) {
-                    verenpaineKentta.setText("Verenpaineesi on matala.");
-                    verenpaineInfo.setText(matalaVp);
+                    verenpaineKentta.setText(tyydyttavaVp);
+                    verenpaineInfo.setText(tyydyttavaVpInfo);
+                } else if (yla <= 130 && yla >= 120 && ala <= 85 && ala >= 80) {
+                    verenpaineKentta.setText(normaaliVp);
+                    verenpaineInfo.setText(normaaliVpInfo);
+                } else if (yla <= 120 && yla >= 100 && ala <= 80 && ala >= 60) {
+                    verenpaineKentta.setText(ihanteellinenVp);
+                    verenpaineInfo.setText(ihanteellinenVpInfo);
+                } else if (yla <= 100 && yla >= 50 && ala <= 60 && ala >= 40) {
+                    verenpaineKentta.setText(matalaVp);
+                    verenpaineInfo.setText(matalaVpInfo);
                 } else if (yla >= 200 || ala >= 150) {
-                    verenpaineKentta.setText("Yli rajojen.");
+                    verenpaineKentta.setText(ylaRaja);
                     verenpaineInfo.setText("");
                 } else if (yla <= 50 || ala <= 30) {
-                    verenpaineKentta.setText("Alle rajojen.");
+                    verenpaineKentta.setText(alaRaja);
                     verenpaineInfo.setText("");
                 }
             } catch (NumberFormatException exception) {

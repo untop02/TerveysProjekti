@@ -6,4 +6,21 @@
     <string name="Paino">Paino</string>
     <string name="Ika">Ikä</string>
     <string name="Pituus">Pituus</string>
+    <string name="Yläarvo">Yläarvo (mmHg)</string>
+    <string name="Ala_arvo">Ala-arvo (mmHg)</string>
+    <string name="hint_ylä">e.g. 120</string>
+    <string name="hint_ala">e.g. 80</string>
+    <string name="Laske">Laske</string>
+    <string name="matala_vp_info">Verenpaine on matala, kun se on alle 100/60 mmHg.</string>
+    <string name="ihanteellinen_vp_info">Verenpaine on ihanteellinen, kun se on alle 120/80 mmHg.</string>
+    <string name="koholla_vp_info">Verenpaine on koholla, kun se on yli 140/90 mmHg.</string>
+    <string name="tyydyttava_vp_info">Verenpaine on tyydyttävä, kun se on 130–139/85–89 mmHg välillä.</string>
+    <string name="normaali_vp_info">Verenpaine on normaali, kun se on alle 130/85 mmHg.</string>
+    <string name="matala_vp">Verenpaineesi on matala.</string>
+    <string name="ihanteellinen_vp">Verenpaineesi on ihanteellinen.</string>
+    <string name="koholla_vp">Verenpaineesi on koholla.</string>
+    <string name="tyydyttava_vp">Verenpaineesi on tyydyttävä.</string>
+    <string name="normaali_vp">Verenpaineesi on normaali.</string>
+    <string name="Ala_raja">Alle rajojen.</string>
+    <string name="Ylä_raja">Yli rajojen.</string>
 </resources>
