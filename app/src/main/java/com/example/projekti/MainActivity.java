@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,9 +14,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button painoIndeksiBtn = (Button)findViewById(R.id.PainoIndeksiBtn);
-        Button verenpaineBtn = (Button)findViewById(R.id.VerenpaineBtn);
-        Button vesilaskuriBtn = (Button)findViewById(R.id.VesiLaskuriBtn);
+        ImageButton painoIndeksiBtn = (ImageButton )findViewById(R.id.PainoIndeksiBtn);
+        ImageButton  verenpaineBtn = (ImageButton )findViewById(R.id.VerenpaineBtn);
+        ImageButton  vesilaskuriBtn = (ImageButton )findViewById(R.id.VesiLaskuriBtn);
 
         verenpaineBtn.setOnClickListener(new View.OnClickListener() {
             @Override
