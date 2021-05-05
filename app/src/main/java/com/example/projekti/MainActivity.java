@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ImageButton painoIndeksiBtn = (ImageButton )findViewById(R.id.PainoIndeksiBtn);
         ImageButton  verenpaineBtn = (ImageButton )findViewById(R.id.VerenpaineBtn);
-        ImageButton  vesilaskuriBtn = (ImageButton )findViewById(R.id.ArrayBtn);
+        ImageButton  vesilaskuriBtn = (ImageButton )findViewById(R.id.vesiLaskuriBtn);
 
         verenpaineBtn.setOnClickListener(new View.OnClickListener() {
             @Override
