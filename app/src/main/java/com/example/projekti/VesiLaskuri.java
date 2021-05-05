@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class VesiLaskuri extends AppCompatActivity {
 
-    Double vesimaara;
+    Double vesimaara = 0.0;
     TextView vedenmaara;
     Button pienipullo;
     Button isopullo;
@@ -90,6 +90,4 @@ public class VesiLaskuri extends AppCompatActivity {
         TextView vedenmaara = findViewById(R.id.juotuMaara);
         vedenmaara.setText(text);
     }
-
-
 }
