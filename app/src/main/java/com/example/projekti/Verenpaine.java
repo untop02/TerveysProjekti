@@ -8,12 +8,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//Tekijä Sylvester Salo
 public class Verenpaine extends AppCompatActivity {
 
     TextView verenpaineKentta, verenpaineInfo;
     Button laskeBtn;
     EditText ylaArvo, alaArvo;
-    String matalaVpInfo, ihanteellinenVpInfo, normaaliVpInfo, tyydyttavaVpInfo, korkeaVpInfo, matalaVp, ihanteellinenVp, normaaliVp, tyydyttavaVp, korkeaVp, ylaRaja, alaRaja;
+    String matalaVpInfo, ihanteellinenVpInfo, normaaliVpInfo, tyydyttavaVpInfo, korkeaVpInfo,
+            matalaVp, ihanteellinenVp, normaaliVp, tyydyttavaVp, korkeaVp, ylaRaja, alaRaja;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +46,14 @@ public class Verenpaine extends AppCompatActivity {
         alaRaja = getString(R.string.Ala_raja);
 
 
-        //Napin painallus hakee arvot tekstikentistä ja kertoo verenpaineen tason ehtojen mukaisesti
+        //Kuuntelija napin painallukselle
         laskeBtn.setOnClickListener(v -> {
             try {
+                //Haetaan arvot tekstikentistä, muutetaan sisältö Integeriksi
                 int yla = Integer.parseInt(ylaArvo.getText().toString());
                 int ala = Integer.parseInt(alaArvo.getText().toString());
 
+                //Annettujen arvojen perusteella asetetaan arvojen mukainen teksti
                 if (yla >= 140 && yla <= 200 && ala >= 90 && ala <= 150) {
                     verenpaineKentta.setText(korkeaVp);
                     verenpaineInfo.setText(korkeaVpInfo);
@@ -72,13 +76,13 @@ public class Verenpaine extends AppCompatActivity {
                     verenpaineKentta.setText(alaRaja);
                     verenpaineInfo.setText("");
                 }
+
+                //Ilmoittaa, jos tekstikenttä on tyhjä, ohjeistaa täyttämään kentän
             } catch (NumberFormatException exception) {
                 Toast.makeText(getApplicationContext(), "Täytä kentät", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
-
-
 }
 
