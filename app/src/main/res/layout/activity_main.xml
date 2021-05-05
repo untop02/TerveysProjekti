@@ -7,9 +7,24 @@
     tools:context=".MainActivity">
 
     <ImageButton
+        android:id="@+id/vesiLaskuriBtn"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/vesilaskuri"
+        android:scaleType="fitXY"
+        android:tint="@color/design_default_color_error"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/VerenpaineBtn"
+        app:srcCompat="@drawable/water" />
+
+    <ImageButton
         android:id="@+id/PainoIndeksiBtn"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/painonappi"
         android:scaleType="fitXY"
@@ -23,13 +38,13 @@
 
     <ImageButton
         android:id="@+id/VerenpaineBtn"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/verenpaine"
         android:scaleType="fitXY"
         android:tint="@color/design_default_color_error"
-        app:layout_constraintBottom_toTopOf="@+id/VesiLaskuriBtn"
+        app:layout_constraintBottom_toTopOf="@+id/ArrayBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,19 +52,34 @@
         app:srcCompat="@drawable/verenpaine" />
 
     <ImageButton
-        android:id="@+id/VesiLaskuriBtn"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:id="@+id/ArrayBtn"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/vesilaskuri"
         android:scaleType="fitXY"
         android:tint="@color/design_default_color_error"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/VerenpaineBtn"
+        app:layout_constraintTop_toBottomOf="@+id/vesiLaskuriBtn"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/water" />
+
+    <TextView
+        android:id="@+id/Historia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vesilaskuri"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/design_default_color_error"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toEndOf="@+id/ArrayBtn"
+        app:layout_constraintTop_toBottomOf="@+id/VerenpaineBtn"
+        app:layout_constraintVertical_bias="0.77" />
 
     <TextView
         android:id="@+id/PainoIndeksi"
@@ -71,7 +101,7 @@
         android:text="@string/verenpaine"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/design_default_color_error"
-        app:layout_constraintBottom_toTopOf="@+id/VesiLaskuriBtn"
+        app:layout_constraintBottom_toTopOf="@+id/ArrayBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/VerenpaineBtn"
         app:layout_constraintTop_toBottomOf="@+id/PainoIndeksiBtn" />
@@ -86,6 +116,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toEndOf="@+id/VesiLaskuriBtn"
+        app:layout_constraintStart_toEndOf="@+id/ArrayBtn"
         app:layout_constraintTop_toBottomOf="@+id/VerenpaineBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>
