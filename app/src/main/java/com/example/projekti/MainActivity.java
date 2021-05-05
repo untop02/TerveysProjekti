@@ -13,10 +13,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //haetaan napit activity:main.xml tiedostosta
         ImageButton painoIndeksiBtn = (ImageButton )findViewById(R.id.PainoIndeksiBtn);
         ImageButton  verenpaineBtn = (ImageButton )findViewById(R.id.VerenpaineBtn);
-        ImageButton  vesilaskuriBtn = (ImageButton )findViewById(R.id.vesiLaskuriBtn);
+        ImageButton  vesilaskuriBtn = (ImageButton )findViewById(R.id.VesiLaskuriBtn);
 
+        //Kuuntelijat UI napeille
         verenpaineBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
