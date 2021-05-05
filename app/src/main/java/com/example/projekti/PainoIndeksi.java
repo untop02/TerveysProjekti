@@ -14,8 +14,7 @@ import android.widget.Toast;
 
 public class PainoIndeksi extends AppCompatActivity {
 
-    private static String PROVIDER = "search_manager";
-    private static String QUERY = "query";
+
     private static final String KEY = "painoAvain";
 
     public static final String SHARED_PREFS = "sharedPrefs";
@@ -24,7 +23,7 @@ public class PainoIndeksi extends AppCompatActivity {
     double h;
     String stringBmi = "";
     TextView tv;
-    private Array bmiArray;
+
 
 
     @Override
@@ -36,7 +35,7 @@ public class PainoIndeksi extends AppCompatActivity {
         EditText paino = (EditText) findViewById(R.id.Paino);
         EditText pituus = (EditText) findViewById(R.id.Pituus);
          tv = (TextView) findViewById(R.id.textView);
-            bmiArray = new Array();
+
 
             //Kuuntelija laske napille
         b.setOnClickListener(new View.OnClickListener() {
