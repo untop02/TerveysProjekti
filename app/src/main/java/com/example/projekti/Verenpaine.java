@@ -8,12 +8,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//Tekijä Sylvester Salo
 public class Verenpaine extends AppCompatActivity {
 
     TextView verenpaineKentta, verenpaineInfo;
     Button laskeBtn;
     EditText ylaArvo, alaArvo;
-    String matalaVpInfo, ihanteellinenVpInfo, normaaliVpInfo, tyydyttavaVpInfo, korkeaVpInfo, matalaVp, ihanteellinenVp, normaaliVp, tyydyttavaVp, korkeaVp, ylaRaja, alaRaja;
+    String matalaVpInfo, ihanteellinenVpInfo, normaaliVpInfo, tyydyttavaVpInfo, korkeaVpInfo,
+            matalaVp, ihanteellinenVp, normaaliVp, tyydyttavaVp, korkeaVp, ylaRaja, alaRaja;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
