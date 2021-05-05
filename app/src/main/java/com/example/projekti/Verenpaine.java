@@ -46,12 +46,14 @@ public class Verenpaine extends AppCompatActivity {
         alaRaja = getString(R.string.Ala_raja);
 
 
-        //Napin painallus hakee arvot tekstikentistä ja kertoo verenpaineen tason ehtojen mukaisesti
+        //Kuuntelija napin painallukselle
         laskeBtn.setOnClickListener(v -> {
             try {
+                //Haetaan arvot tekstikentistä, muutetaan sisältö Integeriksi
                 int yla = Integer.parseInt(ylaArvo.getText().toString());
                 int ala = Integer.parseInt(alaArvo.getText().toString());
 
+                //Annettujen arvojen perusteella asetetaan arvojen mukainen teksti
                 if (yla >= 140 && yla <= 200 && ala >= 90 && ala <= 150) {
                     verenpaineKentta.setText(korkeaVp);
                     verenpaineInfo.setText(korkeaVpInfo);
@@ -74,13 +76,13 @@ public class Verenpaine extends AppCompatActivity {
                     verenpaineKentta.setText(alaRaja);
                     verenpaineInfo.setText("");
                 }
+
+                //Ilmoittaa, jos tekstikenttä on tyhjä, ohjeistaa täyttämään kentän
             } catch (NumberFormatException exception) {
                 Toast.makeText(getApplicationContext(), "Täytä kentät", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
-
-
 }
 
