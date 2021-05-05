@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.content.Context;
 
 public class VesiLaskuri extends AppCompatActivity {
 
@@ -16,6 +18,8 @@ public class VesiLaskuri extends AppCompatActivity {
     Button pienipullo;
     Button isopullo;
     Button vesilasi;
+    Button nollaa;
+    int resetointi = 0;
 
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String vesitalletus = "vesiavain";
@@ -25,11 +29,21 @@ public class VesiLaskuri extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vesi_laskuri);
 
+
+
         vedenmaara = findViewById(R.id.juotuMaara);
         vesilasi = findViewById(R.id.lasiBtn);
         isopullo = findViewById(R.id.isopulloBtn);
         pienipullo = findViewById(R.id.pienipulloBtn);
+        nollaa = findViewById(R.id.resetBtn);
 
+        nollaa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reset();
+            }
+
+        });
         vesilasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,6 +63,11 @@ public class VesiLaskuri extends AppCompatActivity {
             }
         });
     }
+    public void reset(){
+        vesimaara = 0.0;
+        TextView vedenmaara = findViewById(R.id.juotuMaara);
+        vedenmaara.setText("0.0");
+    }
     public void lisaaLasi(){
         vesimaara += 0.3;
         double roundOff = Math.round(vesimaara * 100.0) / 100.0;
@@ -64,13 +83,11 @@ public class VesiLaskuri extends AppCompatActivity {
         double roundOff = Math.round(vesimaara * 100.0) / 100.0;
         vedenmaara.setText(String.valueOf(roundOff));
     }
-
     @Override
     protected void onStart() {
         super.onStart();
         loadData();
     }
-
     @Override
     protected void onPause() {
         super.onPause();
@@ -82,11 +99,9 @@ public class VesiLaskuri extends AppCompatActivity {
         editor.putString(vesitalletus, vedenmaara.getText().toString());
         editor.apply();
     }
-
     public void loadData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         String text = sharedPreferences.getString(vesitalletus, "");
-
         TextView vedenmaara = findViewById(R.id.juotuMaara);
         vedenmaara.setText(text);
     }

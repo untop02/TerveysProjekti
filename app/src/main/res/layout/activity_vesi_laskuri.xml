@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
-        android:layout_marginBottom="108dp"
+        android:layout_marginBottom="100dp"
         android:text="Aikuisten kuuluisi juoda päivän aikana 2-3 litraa vettä."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="Vesilasi (0,3L)"
-        app:layout_constraintBottom_toTopOf="@+id/ihanneMaara"
+        app:layout_constraintBottom_toTopOf="@+id/resetBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
@@ -57,6 +57,17 @@
         android:layout_marginBottom="16dp"
         android:text="Pieni pullo (0,5L)"
         app:layout_constraintBottom_toTopOf="@+id/isopulloBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/resetBtn"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Nollaa"
+        app:layout_constraintBottom_toTopOf="@+id/ihanneMaara"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
