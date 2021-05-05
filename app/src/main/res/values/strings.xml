@@ -6,6 +6,10 @@
     <string name="Paino">Paino</string>
     <string name="Ika">Ikä</string>
     <string name="Pituus">Pituus</string>
+    <string name="painoindeksi">Painoindeksi</string>
+    <string name="verenpaine">Verenpaine</string>
+    <string name="vesilaskuri">Vesilaskuri</string>
+    <string name="painonappi">Painonappi</string>
     <string name="Yläarvo">Yläarvo (mmHg)</string>
     <string name="Ala_arvo">Ala-arvo (mmHg)</string>
     <string name="hint_ylä">e.g. 120</string>
