@@ -24,8 +24,6 @@ public class PainoIndeksi extends AppCompatActivity {
     String stringBmi = "";
     TextView tv;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,10 +67,6 @@ public class PainoIndeksi extends AppCompatActivity {
                 }catch (NumberFormatException exception) {
                     Toast.makeText(getApplicationContext(), "Täytä kentät", Toast.LENGTH_SHORT).show();
                 }
-
-
-
-
             }
 
         });
